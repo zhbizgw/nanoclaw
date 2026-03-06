@@ -1,0 +1,21 @@
+id: add-feishu
+name: Add Feishu (Lark)
+description: Add Feishu/Lark as a channel. Supports both Feishu and Lark (enterprise) versions. Uses WebSocket long connection for real-time messaging.
+version: 1.0.0
+
+files:
+  add:
+    - src/channels/feishu.ts
+  modify:
+    - src/channels/index.ts
+
+dependencies:
+  - package: @larksuiteoapi/node-sdk
+    version: ^1.59.0
+
+env:
+  - FEISHU_APP_ID
+  - FEISHU_APP_SECRET
+  - FEISHU_DOMAIN (optional, default: feishu)
+  - FEISHU_VERIFICATION_TOKEN (optional, for webhook mode)
+  - FEISHU_ENCRYPT_KEY (optional, for encrypted events)
